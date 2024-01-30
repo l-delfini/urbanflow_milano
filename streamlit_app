@@ -33,11 +33,11 @@ totale_viaggi = sum(nil['viaggi'])
 nil['colori'] = ["#580000", "#5d0500", "#681101", "#711b03", "#7b2406", "#832d09", "#8c350b", "#943d0f", "#9b4411", "#a34b14", "#ab5217", "#b25a19", "#b9601c", "#bf681e", "#c66f21", "#cc7522", "#d37b25", "#d98127", "#dd892f", "#e0913d", "#e2984a", "#e4a055", "#e6a760", "#e7ae6a", "#e9b573", "#ebbc7d", "#edc287", "#eec890", "#efcd99", "#f1d3a1", "#f2d8a7", "#f3ddae", "#f5e1b6", "#f6e5bc", "#f7eac1", "#f8edc7", "#f9f1cc", "#faf4d0", "#fbf6d3", "#fcf8d8", "#fdfbdb", "#fdfcdc", "#fdfddd", "#fefede", "#ffffe0", "#fdfedf", "#fcfdde", "#fbfcde", "#f9fbdd", "#f6fadd", "#f3f9dc", "#f0f6db", "#edf4da", "#e9f2d9", "#e3efd7", "#dfecd6", "#dae9d4", "#d4e6d2", "#cfe3d0", "#c9dfce", "#c1dbca", "#bbd7c8", "#b4d3c5", "#accfc2", "#a3cbbe", "#9cc7bc", "#92c2b8", "#88beb5", "#7dbab2", "#72b5af", "#63b1ab", "#53aca8", "#42a8a6", "#3ba1a0", "#389a99", "#359392", "#328c8b", "#2f8585", "#2c7e7e", "#287777"]
 
 def popup_html(row):
-    institution_name = nil['NIL'][row]
+    nil_name = nil['NIL'][row]
     tot_viaggi = []
     provenienze = []
 
-    for index, row in (locations[locations['Arrivo'] == institution_name]).iterrows():
+    for index, row in (locations[locations['Arrivo'] == nil_name]).iterrows():
         provenienze.append(row['Partenza'])
         tot_viaggi.append(row['conteggio'])
 
@@ -46,7 +46,7 @@ def popup_html(row):
     html = """<!DOCTYPE html>
 <html>
 <head>
-<h4 style="margin-bottom:10">{}</h4>""".format(institution_name) + """
+<h4 style="margin-bottom:10">{}</h4>""".format(nil_name) + """
 </head>
     <table>
 <thead style="border: 1px solid #E1E4E9;">
