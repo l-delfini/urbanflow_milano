@@ -3,13 +3,13 @@ import geopandas as gpd
 import pandas as pd
 from shapely.wkt import loads
 
-trips = pd.read_csv('/Users/lorenzo/Downloads/202209-202311_trips-001-001/202307_trips.csv')
+trips = pd.read_csv('.../202209-202311_trips-001-001/202307_trips.csv')
 
 trips_filtered = trips.sample(frac =.10)
 
 
 trips_filtered['geom_wkt_estimated_route'] = trips_filtered['geom_wkt_estimated_route'].apply(loads)
-nil_milano = pd.read_csv('/Users/lorenzo/Desktop/Articoli tesi/quartieri_2030.csv', usecols=['WKT','NIL'])
+nil_milano = pd.read_csv('.../quartieri_2030.csv', usecols=['WKT','NIL'])
 nil_milano['WKT'] = nil_milano['WKT'].apply(loads)
 nil_milano= gpd.GeoDataFrame(nil_milano, geometry="WKT", crs='epsg:4326')
 
