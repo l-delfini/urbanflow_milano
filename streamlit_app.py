@@ -424,10 +424,10 @@ def chord_diagram():
 
     hv.extension('bokeh')
 
-    census_data = pd.read_csv('nuovo_dataframe2.csv')
-    census_data = census_data[census_data['Partenza'] != census_data['Arrivo']]
+    partenza_destinazione = pd.read_csv('nuovo_dataframe2.csv')
+    partenza_destinazione = partenza_destinazione[partenza_destinazione['Partenza'] != partenza_destinazione['Arrivo']]
 
-    filtered_df = census_data[census_data['Viaggi'] >= viaggi_min]
+    filtered_df = partenza_destinazione[partenza_destinazione['Viaggi'] >= viaggi_min]
 
     filtered_df = filtered_df[filtered_df['type_vehicle'].isin(lista_input)]
 
