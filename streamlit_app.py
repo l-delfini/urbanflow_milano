@@ -239,7 +239,7 @@ def print_map():
 
 
     m = folium.Map(zoom_start=14, location=(45.467250, 9.189686),
-                   tiles="https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZGVsZm8xIiwiYSI6ImNsbmx1YzB6MzJwNDgya3JsZzJsZjc1YWwifQ.6nVOkmTdDbEXbOPu3twfwA",
+                   tiles="https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=",
                    attr="Mapbox")
     m.get_root().html.add_child(folium.JavascriptLink('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js'))
 
